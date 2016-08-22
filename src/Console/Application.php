@@ -3,7 +3,6 @@
 namespace WarbleMedia\HummingBird\Console;
 
 use Symfony\Component\Console\Application as BaseApplication;
-use WarbleMedia\HummingBird\Command;
 use WarbleMedia\HummingBird\HummingBird;
 
 class Application extends BaseApplication

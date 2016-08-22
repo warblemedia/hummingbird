@@ -1,6 +1,6 @@
 <?php
 
-namespace WarbleMedia\HummingBird\Command;
+namespace WarbleMedia\HummingBird\Console\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
