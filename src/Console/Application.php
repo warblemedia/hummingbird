@@ -17,6 +17,7 @@ class Application extends BaseApplication
         parent::__construct('Humming Bird', HummingBird::VERSION);
 
         $this->add(new Command\AboutCommand());
+        $this->add(new Command\MigrateCommand());
     }
 
     /**
