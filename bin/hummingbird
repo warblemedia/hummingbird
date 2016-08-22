@@ -12,12 +12,24 @@ set_error_handler(function ($severity, $message, $file, $line) {
     }
 });
 
-// Installed via composer - load application autoloader
-$autoloader = __DIR__ . '/../../../autoload.php';
-if (file_exists($autoloader)) {
-    require_once $autoloader;
-} else {
-    require_once __DIR__ . '/../vendor/autoload.php';
+// Require autoloader
+if (is_file($autoload = getcwd() . '/vendor/autoload.php')) {
+    require $autoload;
+}
+
+if (!class_exists('WarbleMedia\HummingBird\Console\Application', true)) {
+    if (is_file($autoload = __DIR__ . '/../vendor/autoload.php')) {
+        require $autoload;
+    } elseif (is_file($autoload = __DIR__ . '/../../../autoload.php')) {
+        require $autoload;
+    } else {
+        fwrite(STDERR,
+            'You must set up the project dependencies, run the following commands:' . PHP_EOL .
+            'curl -s http://getcomposer.org/installer | php' . PHP_EOL .
+            'php composer.phar install' . PHP_EOL
+        );
+        exit(1);
+    }
 }
 
 // Run the command application
