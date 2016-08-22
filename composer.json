@@ -14,6 +14,7 @@
         "framework"
     ],
     "homepage": "https://github.com/warblemedia/hummingbird",
+    "type": "library",
     "license": "MIT",
     "authors": [
         {
@@ -23,6 +24,9 @@
             "role": "Developer"
         }
     ],
+    "support": {
+        "issues": "https://github.com/warblemedia/hummingbird/issues"
+    },
     "autoload": {
         "psr-4": {
             "WarbleMedia\\HummingBird\\": "src"
